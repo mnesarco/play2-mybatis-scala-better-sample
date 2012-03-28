@@ -1,0 +1,39 @@
+@(message: String, contacts : List[Contact], searchForm: Form[String])
+
+@import helper._
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>@message</h1>
+
+    <form action="@routes.Contacts.search" method="GET">
+        <input type="text" name="filter" id="filter" />
+        <input type="submit" value="Search"/>
+    </form>
+
+    <table class="datatable">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+        </tr>
+        @contacts.map { c =>
+            <tr>
+                <td>
+                    @helper.form(routes.Contacts.edit(c.id), 'style -> "float: left;") {
+                        <input type="submit" value="Edit"/>
+                    }
+                    @helper.form(routes.Contacts.delete(c.id), 'style -> "float: left;") {
+                        <input type="submit" value="Delete"/>
+                    }
+                </td>
+                <td>@c.lastname, @c.firstname</td>
+                <td>@c.phone</td>
+                <td>@c.address</td>
+            </tr>
+        }
+    </table>
+
+    <a href="@routes.Contacts.create" style="margin-top: 10px; display: block;">Create new Contact</a>
+}

@@ -1,0 +1,25 @@
+@(message: String, f : Form[Contact])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(simpleInput.f) } 
+
+@main(message) {
+
+  <h1>@message</h1>
+  <fieldset style="width: 500px;">
+    @helper.form(routes.Contacts.save) {
+      @inputText(f("id"), '_label -> "Id", 'readonly -> "readonly")
+      @inputText(f("firstname"), '_label -> "First name")
+      @inputText(f("lastname"), '_label -> "Last name")
+      @inputText(f("phone"), '_label -> "Phone number")
+      @inputText(f("address"), '_label -> "Address")
+      <fieldset style="margin-top: 10px;">
+          <input type="submit" value="Save" />
+          <a href="@routes.Contacts.home("")">Cancel and go home</a>
+      </fieldset>
+    }        
+  </fieldset>
+  
+}
+

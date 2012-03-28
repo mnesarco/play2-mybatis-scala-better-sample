@@ -1,0 +1,16 @@
+@(elements: helper.FieldElements)
+
+<div class="simple-input @elements.args.get('_class) @if(elements.hasErrors) {error}" id="@elements.args.get('_id).getOrElse(elements.id + "_field")">
+    <label for="@elements.id">
+	@elements.label(elements.lang)
+	@elements.infos(elements.lang).map { info =>
+	    <span class="info">@info</span>
+	}
+    </label>
+    <div class="control">
+	@elements.input
+    </div>
+    @elements.errors(elements.lang).map { error =>
+        <div class="error">@error</div>
+    }
+</div>

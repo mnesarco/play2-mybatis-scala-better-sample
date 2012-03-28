@@ -1,0 +1,45 @@
+table.datatable {
+    border-collapse: collapse;
+}
+
+table.datatable th {
+    border: 1px solid #000000;
+    padding: 3px;
+}
+
+table.datatable td {
+    border: 1px solid #c0c0c0;
+    padding: 3px;
+}
+
+form {
+  padding: 3px;
+  margin: 2px;
+}
+
+div.simple-input {
+  margin-top: 7px;
+  clear: both;
+}
+
+div.error {
+  background: red;
+  padding: 4px;
+}
+
+div.simple-input div.error, div.error label {
+  color: white;
+}
+
+div.simple-input label span.info {
+  padding: 2px;
+  background: green;
+  color: white;
+  font-size: 0.5em;
+  margin-left: 4px;
+}
+
+div.simple-input label {
+  font-weight: bold;
+}
+
