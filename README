@@ -1,4 +1,7 @@
-This is your new Play 2.0 application
-=====================================
+Sample playframework 2.0 application with mybatis-for-scala
+===========================================================
 
-This file will be packaged with your application, when using `play dist`.
+This is a sample CRUD application using play 2.0 and mybatis for scala beta1
+
+See http://www.fdmtech.org/2012/03/a-better-example-of-play-framework-2-0-with-mybatis-for-scala-beta
+
